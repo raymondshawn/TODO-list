@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url('./blue2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
+
+h1 {
+    text-align: center;
+}
+
+.container {
+    transform: translate(46%, 50%);
+}
+
+/* trash icon
+
+<i class="fa-solid fa-trash-can"></i>
+*/
+
+/* edit icon
+
+<i class="fa-sharp fa-solid fa-pen"></i>
+*/
+
+input{
+    height: 30px;
+}
+
+/* .glass{
+    transform: translateX(-20%);
+} */
+
+.search span i{
+    position: relative;
+    left:-9.6%;
+    
+}
+
+.items{
+    border:1px solid red;
+    transform: translateX(50%);
+    margin-top: 20px;
+}
