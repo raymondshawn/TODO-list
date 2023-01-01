@@ -1,1 +1,1 @@
-creating a todo list using fontawesome api 
+creating a todo list,with delete,edit and searching functionality

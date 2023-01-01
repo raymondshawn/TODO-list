@@ -1,33 +1,13 @@
 
-require.config({
-    paths: {
-        'fontawesome': 'vendor/fontawesome/fontawesome.min',
-        'fontawesome/solid': 'vendor/fontawesome/solid.min',
-        'fontawesome/brands': 'vendor/fontawesome/brands.min'
-    },
-    shim: {
-        'fontawesome': {
-            deps: ['fontawesome/solid', 'fontawesome/brands'],
-            exports: 'FontAwesome'
-        }
-    }
-})
 
-// require(['fontawesome'], function (fontawesome) {
-//     console.log('Congrats, Font Awesome is installed using Require.js')
 
-//     var icon = fontawesome.icon(
-//         fontawesome.findIconDefinition({ iconName: 'stroopwafel' }),
-//         {
-//             classes: ['fa-10x']
-//         }
-//     )
-
-//     document.body.appendChild(icon.node[0])
-// })
 
 const inputText = document.getElementById('add');
 const addBtn = document.getElementById('submit')
+const trash = document.querySelector('.trash');
+const edit = document.querySelector('.edit');
+
+
 
 addBtn.addEventListener('click', (e) => {
     const text = inputText.value;
@@ -37,42 +17,41 @@ addBtn.addEventListener('click', (e) => {
     ul.classList.add('items')
     ul.append(li);
     li.innerText = text;
-    const span=document.createElement('span');
+    inputText.value = '';
+    const span = document.createElement('span');
     li.append(span);
+    li.classList.add('ls');
+    span.classList.add('icons');
+    const trashBtn = document.createElement('button');
+    const editBtn = document.createElement('button');
+    trashBtn.classList.add('trash');
+    editBtn.classList.add('edit')
+   
+    trashBtn.innerHTML = '<i class="fa fa-trash trash" aria-hidden="true"></i>'
+    editBtn.innerHTML = '<i class="fas fa-edit edit"></i>'
+    span.append(trashBtn, editBtn);
+
+})
 
 
-    require(['fontawesome'], function (fontawesome) {
-        console.log('Congrats, Font Awesome is installed using Require.js')
-    
-        var trash = fontawesome.icon(
-            fontawesome.findIconDefinition({ iconName: 'trash-can' }),
-            {
-                classes: ['fa-1x']
-            }
-        );
 
-        require(['fontawesome'], function (fontawesome) {
-        console.log('Congrats, Font Awesome is installed using Require.js')
-    
-        var trash = fontawesome.icon(
-            fontawesome.findIconDefinition({ iconName: 'trash-can' }),
-            {
-                classes: ['fa-1x']
-            }
-        );
-
-
-        var edit = fontawesome.icon(
-            fontawesome.findIconDefinition({ iconName: 'edit' }),
-            {
-                classes: ['fa-1x']
-            }
-        );
-
-
+document.body.addEventListener('click', (e) => {
+ 
+    if (e.target.matches('.trash')) {
+        e.target.parentElement.parentElement.parentElement.remove()
+    }
+    else if (e.target.matches('.edit')) {
+        inputText.value = e.target.parentElement.parentElement.textContent;
+        e.target.parentElement.parentElement.parentElement.remove()
         
-    
-        span.append(trash.node[0],edit.node[0]);
-    })
+    }
 
-})})
+
+
+})
+
+
+
+
+
+

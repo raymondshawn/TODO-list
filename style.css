@@ -20,32 +20,34 @@ h1 {
     transform: translate(46%, 50%);
 }
 
-/* trash icon
 
-<i class="fa-solid fa-trash-can"></i>
-*/
 
-/* edit icon
-
-<i class="fa-sharp fa-solid fa-pen"></i>
-*/
-
-input{
+input {
     height: 30px;
 }
 
-/* .glass{
-    transform: translateX(-20%);
-} */
 
-.search span i{
-    position: relative;
-    left:-9.6%;
-    
+
+.items {
+
+    transform: translate(48%, 50%);
+    margin-top: 50px;
 }
 
-.items{
-    border:1px solid red;
-    transform: translateX(50%);
-    margin-top: 20px;
+.icons {
+    margin-left: 20px;
+}
+
+.edit {
+    margin-left: 20px;
+
+    cursor: pointer;
+
+
+
+}
+
+.trash {
+
+    cursor: pointer;
 }
